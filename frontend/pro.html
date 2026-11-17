@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Head tag</title>
+        <style>
+            body{font-family: Arial, Helvetica, sans-serif;
+            margin:40px;
+            }
+            .row{
+              display: block;
+              alignment-baseline: central;
+              margin-bottom:10px;
+            }
+            label{
+              width:200px;
+              font-size: 18px;
+              font-weight:bold;
+              
+            }
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            input[type="address"],
+            input[type="number"],
+            textarea {
+ width:300px;
+              flex-grow: 1;
+              height:25px;
+              border:3px solid orange;
+              border-radius:5px;
+              margin-top:5px;
+            }
+            
+  input[type="submit"]
+  {
+    background-color: #9df46b;
+    margin:13px;
+    padding:5px;
+    border:2px rgb(10, 26, 10);
+  }
+    input[type="button"]
+  {
+    background-color: #fc2af9;
+    margin:13px;
+    padding:5px;
+    border:2px rgb(163, 32, 170);
+  }
+</style>
+    </head>
+    <body>
+        <form>
+            <h2>Student Registration form</h2>
+             <div class="textarea">
+              <div class="row">
+            <label>Name of the Student:</label>
+            <input type="text" name="name"> <br> <br>
+             <label>Father's Name:</label>
+            <input type="text" name="fname"> <br> <br>
+              <label>Email:</label>
+            <input type="email" name="email"> <br> <br>
+              <label>Password:</label>
+            <input type="password" name="password"> <br> <br>
+              <label>Address:</label>
+            <input type="address" name="address"> <br> <br>
+              <label>State:</label>
+            <input type="text" name="name"> <br> <br>
+              <label>Country:</label>
+            <input type="text" name="name"> <br> <br>
+              <label>Pincode:</label>
+            <input type="number" name="pincode"> <br> <br>
+
+            </div>
+            </div>
+            <input type="submit" name="Submit"> 
+             <input type="button" name="Cancel" value="Cancel">
+              <input type="button" name="Reset" value="Reset"> 
+        </form>
+    </body>
+</html>
