@@ -1,0 +1,13 @@
+const API="http://127.0.0.1:8000";
+const form=document.getElementById("registerForm"), msg=document.getElementById("registerMessage");
+let stream=null, photoData=null;
+const role=document.getElementById("accountRole"), video=document.getElementById("cameraPreview");
+role.addEventListener("change",()=>{document.getElementById("enableCamera").disabled=role.value!=="candidate";});
+document.getElementById("enableCamera").onclick=async()=>{try{stream=await navigator.mediaDevices.getUserMedia({video:true});video.srcObject=stream;video.style.display="block";document.getElementById("capturePhoto").disabled=false;msg.textContent="Camera enabled. Position your face and capture a photo."}catch(e){msg.textContent="Camera access failed. Use localhost and allow camera permissions."}};
+document.getElementById("capturePhoto").onclick=()=>{const c=document.getElementById("photoCanvas");c.width=video.videoWidth;c.height=video.videoHeight;c.getContext("2d").drawImage(video,0,0);photoData=c.toDataURL("image/jpeg",.85);const img=document.getElementById("photoPreview");img.src=photoData;img.style.display="block";msg.textContent="Photo captured."};
+form.addEventListener("submit",async e=>{e.preventDefault();msg.textContent="Creating account...";const password=document.getElementById("password").value;if(password!==document.getElementById("confirmPassword").value){msg.textContent="Passwords do not match.";return}
+if(role.value==="candidate"&&!photoData){msg.textContent="Please capture your registration photo before creating a candidate account.";return}
+try{const body={full_name:document.getElementById("fullName").value,email:document.getElementById("email").value,password,role:role.value};let r=await fetch(API+"/auth/register",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});let d=await r.json();if(!r.ok)throw Error(d.detail||"Registration failed");
+if(photoData){const login=await fetch(API+"/auth/login",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:body.email,password,role:body.role})});const ld=await login.json();if(!login.ok)throw Error(ld.detail||"Login for photo upload failed");const pr=await fetch(API+"/profile/photo",{method:"POST",headers:{"Authorization":"Bearer "+ld.access_token,"Content-Type":"application/json"},body:JSON.stringify({image_data:photoData})});const pd=await pr.json();if(!pr.ok)throw Error(pd.detail||"Photo upload failed")}
+if(stream)stream.getTracks().forEach(t=>t.stop());msg.textContent="Account created. Redirecting to login...";setTimeout(()=>location.href="login.html",700);
+}catch(err){msg.textContent=err.message}});

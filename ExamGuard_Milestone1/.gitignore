@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.py[cod]
+backend/examguard.db
+backend/uploads/
+backend/synthetic_session_logs.csv
+.env

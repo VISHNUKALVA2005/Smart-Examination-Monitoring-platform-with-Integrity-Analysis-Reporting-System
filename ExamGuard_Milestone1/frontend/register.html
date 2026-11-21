@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | ExamGuard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <!-- Left Branding Section -->
+        <section class="brand-section">
+
+            <div class="brand-logo">
+                <div class="logo-icon">E</div>
+                <span>ExamGuard</span>
+            </div>
+
+            <div class="brand-content">
+                <p class="eyebrow">SMART EXAMINATION PLATFORM</p>
+
+                <h1>Start Secure.<br>Stay Confident.</h1>
+
+                <p class="brand-description">
+                    Create your ExamGuard account to access a secure
+                    examination platform designed to support fair
+                    assessments and reliable integrity analysis.
+                </p>
+
+                <div class="feature-list">
+                    <div class="feature">
+                        <span class="feature-check">✓</span>
+                        Secure account access
+                    </div>
+
+                    <div class="feature">
+                        <span class="feature-check">✓</span>
+                        Intelligent exam monitoring
+                    </div>
+
+                    <div class="feature">
+                        <span class="feature-check">✓</span>
+                        Reliable examination records
+                    </div>
+                </div>
+            </div>
+
+            <p class="brand-footer">
+                Secure examinations. Trusted results.
+            </p>
+
+        </section>
+
+        <!-- Right Registration Section -->
+        <section class="form-section">
+
+            <div class="login-card">
+
+                <div class="mobile-logo">
+                    <div class="logo-icon">E</div>
+                    <span>ExamGuard</span>
+                </div>
+
+                <div class="form-heading">
+                    <p class="welcome-label">GET STARTED</p>
+                    <h2>Create your account</h2>
+                    <p>Enter your details to register with ExamGuard.</p>
+                </div>
+
+                <form id="registerForm">
+
+                    <div class="form-group">
+                        <label for="accountRole">Create account as</label><select id="accountRole" class="role-select"><option value="candidate">Candidate</option><option value="invigilator">Invigilator</option><option value="administrator">Administrator</option></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fullName">Full name</label>
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm password</label>
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Re-enter your password"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group" style="margin-top:18px;">
+                        <label>Registration photo (camera)</label>
+                        <video id="cameraPreview" autoplay playsinline style="width:100%;max-height:190px;background:#101827;border-radius:12px;display:none;"></video>
+                        <canvas id="photoCanvas" style="display:none;"></canvas>
+                        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+                            <button type="button" id="startCamera" class="login-button" style="flex:1;">Enable camera</button>
+                            <button type="button" id="capturePhoto" class="login-button" style="flex:1;" disabled>Capture photo</button>
+                        </div>
+                        <small id="photoStatus" style="display:block;margin-top:7px;color:#64748b;">Allow camera access, then capture a clear face photo.</small>
+                    </div>
+
+                    <div class="form-group"><label>Registration photograph (candidate)</label><video id="cameraPreview" autoplay playsinline style="width:100%;border-radius:10px;background:#102f32;display:none"></video><canvas id="photoCanvas" style="display:none"></canvas><div style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" id="enableCamera" class="google-button">Enable camera</button><button type="button" id="capturePhoto" class="google-button" disabled>Capture photo</button></div><img id="photoPreview" alt="Captured registration photo" style="display:none;width:120px;margin-top:10px;border-radius:10px"></div>
+                    <button type="submit" class="login-button">
+                        Create Account
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+                <p id="registerMessage"
+                   class="form-message"
+                   role="status"
+                   aria-live="polite"></p>
+
+                <p class="signup-text">
+                    Already have an account?
+                    <a href="login.html">Sign in</a>
+                </p>
+
+            </div>
+
+            <p class="copyright">
+                © 2026 ExamGuard. All rights reserved.
+            </p>
+
+        </section>
+
+    </main>
+    <script src="js/register.js"></script>
+
+</body>
+</html>

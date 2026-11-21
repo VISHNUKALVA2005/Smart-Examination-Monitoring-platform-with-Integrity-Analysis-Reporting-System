@@ -1,0 +1,1133 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+
+:root {
+    --navy: #103B42;
+    --navy-light: #174D52;
+    --blue: #1D7775;
+    --blue-hover: #155E5C;
+    --text: #203A38;
+    --muted: #788B84;
+    --border: #E3EAE5;
+    --white: #FFFFFF;
+
+    --mint: #8ED6C5;
+    --ivory: #F7F8F4;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+   background: var(--ivory);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    padding: 18px;
+    gap: 18px;
+}
+
+/* LEFT BRANDING SECTION */
+
+.brand-section {
+    
+    color: var(--white);
+    border-radius: 20px;
+    padding: 48px 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-section::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 50%;
+    right: -130px;
+    bottom: -150px;
+    box-shadow:
+        0 0 0 35px rgba(255,255,255,0.025),
+        0 0 0 70px rgba(255,255,255,0.02);
+}
+
+.brand-logo,
+.mobile-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 23px;
+    font-weight: 800;
+
+}
+
+.brand-content {
+    max-width: 520px;
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow,
+.welcome-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 20px;
+}
+
+.brand-content h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(34px, 3.5vw, 48px);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin-bottom: 22px;
+}
+
+.brand-description {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 440px;
+}
+
+.feature-list {
+    margin-top: 38px;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 14px;
+}
+
+.feature-check {
+    width: 23px;
+    height: 23px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.brand-footer {
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+/* RIGHT LOGIN SECTION */
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+    position: relative;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+}
+
+.mobile-logo {
+    display: none;
+    margin-bottom: 45px;
+}
+
+.form-heading {
+    margin-bottom: 35px;
+}
+
+.form-heading h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 29px;
+    letter-spacing: -0.8px;
+    margin-bottom: 10px;
+}
+
+.form-heading p:last-child {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.form-heading .welcome-label {
+    color: var(--blue);
+    margin-bottom: 13px;
+}
+
+/* FORM INPUTS */
+
+.form-group {
+    margin-bottom: 23px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.form-group input {
+    width: 100%;
+    height: 52px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--white);
+    padding: 0 15px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text);
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.form-group select {
+    width: 100%;
+    height: 52px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--white);
+    padding: 0 15px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text);
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: #aab1c0;
+}
+
+.form-group input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 4px rgba(29, 119, 117, 0.10);
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 65px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    color: var(--blue);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* FORM OPTIONS */
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0 27px;
+    font-size: 12px;
+}
+
+.remember-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #687287;
+    cursor: pointer;
+}
+
+.remember-option input {
+    accent-color: var(--blue);
+    width: 15px;
+    height: 15px;
+}
+
+.forgot-link {
+    color: var(--blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.forgot-link:hover,
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+/* BUTTONS */
+
+.login-button {
+    width: 100%;
+    height: 52px;
+    background: var(--blue);
+    border: none;
+    border-radius: 9px;
+    color: var(--white);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: 0.2s ease;
+   box-shadow: 0 7px 18px rgba(29, 119, 117, 0.20);
+}
+
+.login-button:hover {
+    background: var(--blue-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 9px 23px rgba(29, 119, 117, 0.25);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 28px 0;
+    color: #a0a7b5;
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.google-button {
+    width: 100%;
+    height: 51px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: var(--white);
+    color: #344054;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.google-button:hover {
+    background: #f8faff;
+    border-color: #cbd4e5;
+}
+
+.google-icon {
+    font-family: Arial, sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #4285f4;
+}
+
+.signup-text {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.signup-text a {
+    color: var(--blue);
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 16px;
+    color: #a1a9b8;
+    font-size: 11px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+    .brand-section {
+        padding: 35px;
+    }
+
+    .form-section {
+        padding: 25px;
+    }
+
+    .brand-content h1 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 680px) {
+    .login-container {
+        display: block;
+        padding: 0;
+    }
+
+    .brand-section {
+        display: none;
+    }
+
+    .form-section {
+        min-height: 100vh;
+        padding: 35px 24px 65px;
+    }
+
+    .mobile-logo {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 55px;
+    }
+
+    .form-heading h2 {
+        font-size: 25px;
+    }
+
+    .copyright {
+        bottom: 20px;
+    }
+}
+/* LOGIN MESSAGE */
+
+.form-message {
+    margin-top: 14px;
+    font-size: 13px;
+    text-align: center;
+    color: #d97706;
+    line-height: 1.5;
+}
+
+.form-message:empty {
+    display: none;
+}
+
+
+
+/* PREMIUM LOGIN PAGE FINISH */
+
+/* Add subtle depth to the right side */
+
+/* Give the existing login form a refined surface */
+.login-card {
+    max-width: 500px;
+    padding: 38px 36px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(226, 232, 243, 0.9);
+    border-radius: 18px;
+    box-shadow:
+        0 12px 35px rgba(20, 35, 75, 0.055),
+        0 2px 8px rgba(20, 35, 75, 0.025);
+}
+
+
+
+
+
+/* Refined Google button */
+.google-button {
+    box-shadow: 0 2px 5px rgba(20, 35, 75, 0.025);
+}
+
+/* Keep the card comfortable on smaller screens */
+@media (max-width: 680px) {
+    .login-card {
+        padding: 30px 22px;
+    }
+}
+
+/* DEEP TEAL THEME */
+
+body {
+    background: var(--ivory);
+    color: var(--text);
+}
+
+.login-container {
+    background: var(--ivory);
+}
+
+/* Left branding panel */
+.brand-section {
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(142, 214, 197, 0.17),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(29, 119, 117, 0.25),
+            transparent 38%
+        ),
+        linear-gradient(145deg, #103B42, #174D52);
+}
+
+/* Logo */
+.logo-icon {
+    background: linear-gradient(135deg, #8ED6C5, #4DAE9D);
+    color: #103B42;
+    box-shadow: 0 5px 18px rgba(142, 214, 197, 0.22);
+}
+
+/* Branding highlights */
+.eyebrow {
+    color: #8ED6C5;
+}
+
+.feature-check {
+    color: #8ED6C5;
+    background: rgba(142, 214, 197, 0.12);
+    border-color: rgba(142, 214, 197, 0.35);
+}
+
+/* Right side */
+.form-section {
+    background:
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(142, 214, 197, 0.10),
+            transparent 35%
+        ),
+        #F7F8F4;
+}
+
+/* Login headings and links */
+.form-heading .welcome-label {
+    color: #1D7775;
+}
+
+.forgot-link,
+.signup-text a,
+.toggle-password {
+    color: #1D7775;
+}
+
+/* Input focus */
+.form-group input:focus {
+    border-color: #1D7775;
+    box-shadow: 0 0 0 4px rgba(29, 119, 117, 0.10);
+}
+
+/* Sign in button */
+.login-button {
+    background: linear-gradient(110deg, #1D7775, #29958A);
+    box-shadow: 0 7px 18px rgba(29, 119, 117, 0.20);
+}
+
+.login-button:hover {
+    background: linear-gradient(110deg, #155E5C, #1D7775);
+    box-shadow: 0 9px 23px rgba(29, 119, 117, 0.25);
+}
+
+/* Checkbox */
+.remember-option input {
+    accent-color: #1D7775;
+}
+
+
+/* =================================
+   CANDIDATE DASHBOARD
+================================= */
+
+.candidate-dashboard {
+    min-height: 100vh;
+    background: var(--ivory);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+
+.dashboard-header {
+    min-height: 82px;
+    padding: 15px 6%;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.candidate-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.profile-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #DDF2EB;
+    color: #155E5C;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+}
+
+.candidate-profile a {
+    margin-left: 12px;
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.candidate-profile a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+
+.dashboard-content {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 55px 35px;
+    flex: 1;
+}
+
+.dashboard-welcome {
+    margin-bottom: 48px;
+}
+
+.dashboard-welcome .welcome-label {
+    color: var(--blue);
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 13px;
+}
+
+.dashboard-welcome h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(28px, 4vw, 38px);
+    letter-spacing: -1px;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.dashboard-welcome > p:last-child {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Available Examinations */
+
+.exam-section {
+    margin-bottom: 48px;
+}
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading h2,
+.guidelines-section > h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 21px;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.exam-empty-state {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 45px 25px;
+    text-align: center;
+}
+
+.exam-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 17px;
+    border-radius: 14px;
+    background: #E5F3EF;
+    color: var(--blue);
+    display: grid;
+    place-items: center;
+    font-size: 27px;
+}
+
+.exam-empty-state h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 17px;
+    margin-bottom: 9px;
+    color: var(--text);
+}
+
+.exam-empty-state p {
+    max-width: 430px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* Examination Guidelines */
+
+.guidelines-section {
+    margin-bottom: 35px;
+}
+
+.guidelines-section > h2 {
+    margin-bottom: 22px;
+}
+
+.guidelines-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.guideline-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 25px 22px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.guideline-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(16, 59, 66, 0.07);
+}
+
+.guideline-number {
+    color: var(--blue);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.guideline-card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    margin-bottom: 10px;
+}
+
+.guideline-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* Footer */
+
+.dashboard-footer {
+    padding: 20px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+    border-top: 1px solid var(--border);
+    background: var(--white);
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        padding: 15px 22px;
+    }
+
+    .dashboard-content {
+        padding: 38px 22px;
+    }
+
+    .guidelines-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-header {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .candidate-profile {
+        gap: 8px;
+    }
+
+    .candidate-profile a {
+        margin-left: 5px;
+    }
+
+    .dashboard-welcome {
+        margin-bottom: 35px;
+    }
+}
+
+
+/* =================================
+   INVIGILATOR DASHBOARD
+================================= */
+
+.invigilator-dashboard {
+    min-height: 100vh;
+    background: var(--ivory);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+
+.invigilator-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.invigilator-profile a {
+    margin-left: 12px;
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.invigilator-profile a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+
+.invigilator-content {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 55px 35px;
+    flex: 1;
+}
+
+.invigilator-welcome {
+    margin-bottom: 48px;
+}
+
+.invigilator-welcome .welcome-label {
+    color: var(--blue);
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 13px;
+}
+
+.invigilator-welcome h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(28px, 4vw, 38px);
+    letter-spacing: -1px;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.invigilator-welcome > p:last-child {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Monitoring and Activity Sections */
+
+.monitoring-section,
+.activity-section {
+    margin-bottom: 42px;
+}
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 21px;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Empty States */
+
+.monitoring-empty-state,
+.activity-empty-state {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 45px 25px;
+    text-align: center;
+}
+
+.monitoring-icon,
+.activity-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 17px;
+    border-radius: 14px;
+    background: #E5F3EF;
+    color: var(--blue);
+    display: grid;
+    place-items: center;
+    font-size: 27px;
+}
+
+.monitoring-empty-state h3,
+.activity-empty-state h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 17px;
+    margin-bottom: 9px;
+    color: var(--text);
+}
+
+.monitoring-empty-state p,
+.activity-empty-state p {
+    max-width: 460px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .invigilator-content {
+        padding: 38px 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .invigilator-profile {
+        gap: 8px;
+    }
+
+    .invigilator-profile a {
+        margin-left: 5px;
+    }
+
+    .invigilator-welcome {
+        margin-bottom: 35px;
+    }
+}
+
+
+/* =================================
+   ADMINISTRATOR DASHBOARD
+================================= */
+
+.admin-dashboard {
+    min-height: 100vh;
+    background: var(--ivory);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.admin-profile a {
+    margin-left: 12px;
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.admin-profile a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+
+.admin-content {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 55px 35px;
+    flex: 1;
+}
+
+.admin-welcome {
+    margin-bottom: 48px;
+}
+
+.admin-welcome .welcome-label {
+    color: var(--blue);
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 13px;
+}
+
+.admin-welcome h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: clamp(28px, 4vw, 38px);
+    letter-spacing: -1px;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+
+.admin-welcome > p:last-child {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Admin Sections */
+
+.admin-section {
+    margin-bottom: 42px;
+}
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 21px;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* Empty States */
+
+.admin-empty-state {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 45px 25px;
+    text-align: center;
+}
+
+.admin-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 17px;
+    border-radius: 14px;
+    background: #E5F3EF;
+    color: var(--blue);
+    display: grid;
+    place-items: center;
+    font-size: 27px;
+}
+
+.admin-empty-state h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 17px;
+    margin-bottom: 9px;
+    color: var(--text);
+}
+
+.admin-empty-state p {
+    max-width: 460px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .admin-content {
+        padding: 38px 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-profile {
+        gap: 8px;
+    }
+
+    .admin-profile a {
+        margin-left: 5px;
+    }
+
+    .admin-welcome {
+        margin-bottom: 35px;
+    }
+}
